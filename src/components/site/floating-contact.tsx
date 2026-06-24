@@ -9,18 +9,24 @@ export function FloatingContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform text-sm font-medium"
+        className="group flex items-center justify-center bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-lg hover:scale-105 transition-all text-sm font-medium overflow-hidden"
       >
-        <MessageCircle className="w-5 h-5" />
-        <span className="hidden sm:inline">WhatsApp</span>
+        <MessageCircle className="w-6 h-6 shrink-0" />
+        <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-300 ease-in-out whitespace-nowrap">
+          <span className="block text-[10px] uppercase tracking-wider opacity-80">Whatsapp</span>
+          <span className="block font-display text-lg">{CONTACT.phone}</span>
+        </span>
       </a>
       <a
         href={CONTACT.phoneHref}
         aria-label="Call us"
-        className="flex items-center gap-2 bg-[#C8A45D] text-black px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform text-sm font-medium"
+        className="group flex items-center justify-center bg-[#C8A45D] text-black p-3 md:p-4 rounded-full shadow-lg hover:scale-105 transition-all text-sm font-medium overflow-hidden"
       >
-        <Phone className="w-5 h-5" />
-        <span className="hidden sm:inline">Call us</span>
+        <Phone className="w-6 h-6 shrink-0" />
+        <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-300 ease-in-out whitespace-nowrap">
+          <span className="block text-[10px] uppercase tracking-wider opacity-80">Call us now</span>
+          <span className="block font-display text-lg">{CONTACT.phone}</span>
+        </span>
       </a>
     </div>
   );

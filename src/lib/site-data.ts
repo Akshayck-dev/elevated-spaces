@@ -2,6 +2,8 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import kerala1 from "@/assets/kerala-modern-1.png";
+import kerala2 from "@/assets/kerala-modern-2.png";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
 import client3 from "@/assets/client-3.jpg";
@@ -11,7 +13,7 @@ export const CONTACT = {
   phoneHref: "tel:+12125550188",
   whatsapp: "+1 (212) 555 0188",
   whatsappHref: "https://wa.me/12125550188",
-  email: "studio@maisonnoire.co",
+  email: "studio@caerishomes.com",
 };
 
 export const services = [
@@ -34,6 +36,8 @@ export const services = [
 ];
 
 export const projects = [
+  { img: kerala1, client: "Mr. Menon & Family", location: "Kochi, Kerala", slug: "kerala-modern-villa-1" },
+  { img: kerala2, client: "Mr. Nambiar & Family", location: "Trivandrum, Kerala", slug: "kerala-modern-villa-2" },
   { img: project1, client: "Mr. Moretti & Family", location: "Lake Como, Italy", slug: "villa-aurelia" },
   { img: project2, client: "Mr. Whitford & Family", location: "Manhattan, NY", slug: "penthouse-47" },
   { img: project3, client: "Mr. Sterling & Family", location: "London, UK", slug: "atrium-hq" },
@@ -80,7 +84,7 @@ export const testimonials = [
     name: "Isabella Moretti & Family",
     location: "Villa Aurelia · Lake Como",
     quote:
-      "Maison Noire has exceptionally delivered our home with strong experience, dedication and commitment. Their professionalism was evident from the first design meeting through to handover. On-time delivery, quality, and customer support — we recommend them without hesitation.",
+      "Caeris Homes has exceptionally delivered our home with strong experience, dedication and commitment. Their professionalism was evident from the first design meeting through to handover. On-time delivery, quality, and customer support — we recommend them without hesitation.",
   },
   {
     image: client2,
@@ -94,7 +98,7 @@ export const testimonials = [
     name: "Amelia Sterling & Family",
     location: "Atrium HQ · London",
     quote:
-      "When we decided to build abroad, finding a professional studio was a huge challenge. Maison Noire maintained timelines, transparent budgets, and seamless coordination between design and site teams. They delivered one month ahead of schedule.",
+      "When we decided to build abroad, finding a professional studio was a huge challenge. Caeris Homes maintained timelines, transparent budgets, and seamless coordination between design and site teams. They delivered one month ahead of schedule.",
   },
 ];
 

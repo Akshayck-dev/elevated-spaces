@@ -5,6 +5,7 @@ import { useLenis } from "@/lib/use-lenis";
 import { Footer } from "./footer";
 import { FloatingContact } from "./floating-contact";
 import { Nav } from "./nav";
+import { Loader } from "./loader";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   useLenis();
@@ -17,6 +18,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
   return (
     <main className="bg-background text-foreground overflow-hidden">
+      <Loader />
       <Nav />
       {children}
       <Footer />

@@ -1,42 +1,58 @@
+import img1 from "@/assets/indian-home-1.png";
+import img2 from "@/assets/material-wood.jpg";
+import img3 from "@/assets/indian-home-2.png";
+import img4 from "@/assets/material-finishes.jpg";
+import img5 from "@/assets/indian-interior.png";
+
 export function Process() {
   const steps = [
-    { n: "01", t: "Consultation", d: "We meet in your space — or ours — to understand the life you intend to live." },
-    { n: "02", t: "Concept Design", d: "Mood, material, light. A directional palette becomes the soul of the project." },
-    { n: "03", t: "Visualization", d: "Photoreal renders and 3D walkthroughs. Every room seen before it is built." },
-    { n: "04", t: "Execution", d: "Our in-house craftsmen and trusted ateliers bring the design into the world." },
-    { n: "05", t: "Handover", d: "Styled, photographed, and handed over fully turnkey. Move in. Live well." },
+    { n: "01", t: "Consultation", d: "We meet in your space — or ours — to understand the life you intend to live.", img: img1 },
+    { n: "02", t: "Concept Design", d: "Mood, material, light. A directional palette becomes the soul of the project.", img: img2 },
+    { n: "03", t: "Visualization", d: "Photoreal renders and 3D walkthroughs. Every room seen before it is built.", img: img3 },
+    { n: "04", t: "Execution", d: "Our in-house craftsmen and trusted ateliers bring the design into the world.", img: img4 },
+    { n: "05", t: "Handover", d: "Styled, photographed, and handed over fully turnkey. Move in. Live well.", img: img5 },
   ];
+  
   return (
-    <section className="process relative bg-[#0c0c0c] pt-24">
-      <div className="process-pin h-screen flex flex-col px-8 md:px-12 py-16">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <p className="text-eyebrow mb-3">Design Process · 03</p>
-            <h2 className="font-display text-5xl md:text-7xl">
+    <section className="relative bg-[#0c0c0c] pt-32 md:pt-40 pb-32">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex flex-col md:flex-row gap-12 lg:gap-24 items-start relative">
+        
+        {/* Left Sticky Column */}
+        <div className="w-full md:w-1/2 sticky top-32 h-[60vh] md:h-[75vh] overflow-hidden shadow-2xl relative order-2 md:order-1">
+          {steps.map((s, i) => (
+            <img 
+              src={s.img} 
+              key={s.n} 
+              className={`process-img process-img-${i} absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${i === 0 ? 'opacity-100' : 'opacity-0'}`} 
+              alt={s.t} 
+            />
+          ))}
+          {/* Overlay gradient for premium feel */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+        </div>
+
+        {/* Right Scrollable Column */}
+        <div className="w-full md:w-1/2 flex flex-col md:pt-[15vh] md:pb-[30vh] order-1 md:order-2">
+          <div className="mb-16 md:mb-32">
+            <p className="text-eyebrow mb-3 text-[#C8A45D]">Design Process</p>
+            <h2 className="font-display text-5xl md:text-7xl text-white">
               <span className="italic">A method</span>, not a formula.
             </h2>
           </div>
-          <p className="text-meta hidden md:block">05 Stages</p>
-        </div>
-        <div className="gold-line mb-12" />
-        <div className="relative flex-1 grid place-items-center min-h-[50vh]">
+
           {steps.map((s, i) => (
-            <div
-              key={s.n}
-              className="process-step absolute inset-0 grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-center max-w-6xl mx-auto px-4"
-              style={{ opacity: i === 0 ? 1 : 0, pointerEvents: i === 0 ? "auto" : "none" }}
-            >
-              <div className="font-display text-[18vw] md:text-[14vw] leading-none text-[#C8A45D]/90 -tracking-[0.04em]">{s.n}</div>
-              <div>
-                <h3 className="font-display text-5xl md:text-7xl mb-6">{s.t}</h3>
-                <p className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed">{s.d}</p>
-                <p className="text-meta mt-8">
-                  Step {i + 1} of {steps.length}
-                </p>
+            <div key={s.n} className={`process-text-step process-text-step-${i} min-h-[40vh] md:min-h-[75vh] flex flex-col justify-center relative`}>
+              <div className="font-display text-8xl md:text-[12rem] leading-none text-white/5 -mb-6 md:-mb-14 select-none z-0 relative">
+                {s.n}
+              </div>
+              <div className="relative z-10 pl-6 md:pl-10 border-l-2 border-[#C8A45D]/30 transition-colors duration-500 step-border">
+                <h3 className="font-display text-4xl md:text-6xl mb-4 text-white">{s.t}</h3>
+                <p className="text-white/60 text-lg md:text-xl max-w-md leading-relaxed">{s.d}</p>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

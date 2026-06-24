@@ -15,12 +15,12 @@ import { useHomeAnimations } from "@/hooks/use-home-animations";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maison Noire — Luxury Home Builders & Architects" },
+      { title: "Caeris Homes — Luxury Home Builders & Architects" },
       {
         name: "description",
         content: "Luxury home builders and leading architects crafting dream residences — architecture, construction, interiors and turnkey delivery.",
       },
-      { property: "og:title", content: "Maison Noire — We Build Your Dream Home" },
+      { property: "og:title", content: "Caeris Homes — We Build Your Dream Home" },
       { property: "og:description", content: "From vision to reality. Architecture, construction, interiors and turnkey projects worldwide." },
     ],
   }),

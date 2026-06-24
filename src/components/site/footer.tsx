@@ -38,10 +38,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-            <h3 className="font-display text-7xl md:text-9xl tracking-tight leading-none">
-              Maison
-              <br />
-              <span className="text-[#C8A45D] italic">Noire</span>
+            <h3 className="font-display tracking-tight leading-none flex flex-col items-start mb-6">
+              <span className="text-6xl md:text-8xl uppercase tracking-[0.15em] text-white">Caeris</span>
+              <span className="text-2xl md:text-3xl tracking-[0.3em] text-[#C8A45D] uppercase mt-2">Homes</span>
             </h3>
             <p className="text-white/50 mt-8 max-w-sm leading-relaxed">
               Luxury home builders and architects — designing and delivering dream residences on a turnkey basis.
@@ -82,7 +81,7 @@ export function Footer() {
         </div>
         <div className="hairline mb-8" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-meta text-white/40">
-          <p>© 2026 Maison Noire Atelier. All rights reserved.</p>
+          <p>© 2026 Caeris Homes. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-[#C8A45D]">
               Instagram

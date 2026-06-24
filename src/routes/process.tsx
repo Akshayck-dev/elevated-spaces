@@ -6,7 +6,7 @@ import { useProcessAnimations } from "@/hooks/use-process-animations";
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "Process — Maison Noire" },
+      { title: "Process — Caeris Homes" },
       { name: "description", content: "Our five-stage design and build process from consultation to handover." },
     ],
   }),
