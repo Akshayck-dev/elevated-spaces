@@ -1,7 +1,7 @@
-import img1 from "@/assets/indian-home-1.png";
-import img2 from "@/assets/material-wood.jpg";
-import img3 from "@/assets/indian-home-2.png";
-import img4 from "@/assets/material-finishes.jpg";
+import img1 from "@/assets/process-1.png";
+import img2 from "@/assets/process-2.png";
+import img3 from "@/assets/kerala-modern-1.png";
+import img4 from "@/assets/process-4.png";
 import img5 from "@/assets/indian-interior.png";
 
 export function Process() {
@@ -18,12 +18,12 @@ export function Process() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex flex-col md:flex-row gap-12 lg:gap-24 items-start relative">
         
         {/* Left Sticky Column */}
-        <div className="w-full md:w-1/2 sticky top-32 h-[60vh] md:h-[75vh] overflow-hidden shadow-2xl relative order-2 md:order-1">
+        <div className="w-full md:w-1/2 sticky top-32 h-[60vh] md:h-[75vh] overflow-hidden shadow-2xl order-2 md:order-1">
           {steps.map((s, i) => (
             <img 
               src={s.img} 
               key={s.n} 
-              className={`process-img process-img-${i} absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${i === 0 ? 'opacity-100' : 'opacity-0'}`} 
+              className="process-img absolute inset-0 w-full h-full object-cover" 
               alt={s.t} 
             />
           ))}

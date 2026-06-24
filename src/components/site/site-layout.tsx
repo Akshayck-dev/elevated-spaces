@@ -17,7 +17,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <main className="bg-background text-foreground overflow-hidden">
+    <main className="bg-background text-foreground">
       <Loader />
       <Nav />
       {children}
