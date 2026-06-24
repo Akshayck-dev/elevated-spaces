@@ -213,6 +213,8 @@ function Index() {
       <Materials />
       <Stats />
       <Testimonials />
+      <VideoTestimonials />
+
       <Showcase />
       <FinalCTA />
       <Footer />
