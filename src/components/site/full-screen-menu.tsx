@@ -12,10 +12,12 @@ const images = [proj1, proj2, proj3, proj4];
 
 const links = [
   { to: "/" as const, label: "Home" },
+  { to: "/about" as const, label: "About Us" },
   { to: "/projects" as const, label: "Projects" },
   { to: "/construction" as const, label: "Construction" },
   { to: "/process" as const, label: "Process" },
   { to: "/materials" as const, label: "Materials" },
+  { to: "/contact" as const, label: "Contact Us" },
 ];
 
 export function FullScreenMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {

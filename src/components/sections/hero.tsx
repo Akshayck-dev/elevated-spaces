@@ -1,14 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import hero from "@/assets/hero.jpg";
+import heroVideo from "@/assets/Villa_design_and_construction_an…_202606261727.mp4";
 import { Magnetic } from "@/components/site/magnetic";
 
 export function Hero() {
   return (
     <section className="hero relative h-screen w-full overflow-hidden dark text-foreground">
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={hero}
-          alt="Luxury villa interior"
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="hero-img absolute inset-0 w-full h-[120%] object-cover"
           style={{ transform: "scale(1.15)" }}
         />
