@@ -72,33 +72,33 @@ export const whyPillars = [
 
 export const guarantees = [
   "Timely Delivery",
-  "Premium European Materials",
-  "15-Year Structural Warranty",
+  "Using German Technology",
+  "15 Years Warranty",
   "Assured Lifetime Service",
-  "Direct Atelier Craftsmanship",
+  "Delivery Directly From Our Own Factories",
 ];
 
 export const testimonials = [
   {
     image: client1,
-    name: "Isabella Moretti & Family",
-    location: "Villa Aurelia · Lake Como",
+    name: "Mr. Justine John & Family",
+    location: "Kerala",
     quote:
-      "Caeris Homes has exceptionally delivered our home with strong experience, dedication and commitment. Their professionalism was evident from the first design meeting through to handover. On-time delivery, quality, and customer support — we recommend them without hesitation.",
+      "Caeris Homes has exceptionally performed to deliver my home with their strong experience, dedication and commitment to the fullest extent. Their professionalism was evident since beginning of design and drawings. They are valued for On-time delivery, Quality and Customer Support.",
   },
   {
     image: client2,
-    name: "Charles Whitford & Family",
-    location: "Penthouse 47 · Manhattan",
+    name: "Mr. Anish Raju & Family",
+    location: "Kerala",
     quote:
-      "From start to finish, the process was smooth and hassle-free. The team was friendly, attentive, and ensured every need was met. They went above and beyond at every stage — thank you for fulfilling our dream residence.",
+      "I'm truly grateful for the excellent service provided by Caeris Homes. From start to finish, the process was smooth and hassle-free. The staff was friendly, attentive, and ensured that all my needs were met. I appreciate their dedication and hardwork.. thank you Caeris for fulfilling my dream.",
   },
   {
     image: client3,
-    name: "Amelia Sterling & Family",
-    location: "Atrium HQ · London",
+    name: "Mr. Siju Ayyappan & Family",
+    location: "Kerala",
     quote:
-      "When we decided to build abroad, finding a professional studio was a huge challenge. Caeris Homes maintained timelines, transparent budgets, and seamless coordination between design and site teams. They delivered one month ahead of schedule.",
+      "When we decided to build a new home, it was a very huge challenge to find professional company especially when we are settled abroad. Caeris has set a good coordination between the office team and the site team which was a great success in delivering the project at the right time.",
   },
 ];
 

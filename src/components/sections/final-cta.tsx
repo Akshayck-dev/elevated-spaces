@@ -21,7 +21,7 @@ export function FinalCTA() {
           <br />
           {splitChars("SPACE.")}
         </h2>
-        <p className="text-white/70 max-w-xl mx-auto mt-10 leading-relaxed" data-reveal>
+        <p className="text-foreground/70 max-w-xl mx-auto mt-10 leading-relaxed" data-reveal>
           From concept to completion, we transform ideas into extraordinary living experiences.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12" data-reveal>
@@ -31,7 +31,7 @@ export function FinalCTA() {
             </a>
           </Magnetic>
           <Magnetic>
-            <Link to="/projects" className="border border-white/40 text-white px-8 py-5 text-meta hover:border-white">
+            <Link to="/projects" className="border border-border/40 text-foreground px-8 py-5 text-meta hover:border-border">
               View Portfolio
             </Link>
           </Magnetic>

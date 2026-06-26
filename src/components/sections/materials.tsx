@@ -14,7 +14,7 @@ export function Materials() {
     { img: finishes, t: "Custom Finishes", n: "05" },
   ];
   return (
-    <section className="bg-[#0c0c0c] pt-24 py-32 px-8 md:px-12">
+    <section className="bg-background pt-24 py-32 px-8 md:px-12">
       <div className="flex justify-between items-end mb-16 max-w-7xl mx-auto" data-reveal>
         <div>
           <p className="text-eyebrow mb-3">Material Library · 05</p>
@@ -26,7 +26,7 @@ export function Materials() {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 max-w-7xl mx-auto">
         {items.map((m, i) => (
-          <article key={m.t} data-reveal className="group relative aspect-[3/4] overflow-hidden bg-black">
+          <article key={m.t} data-reveal className="group relative aspect-[3/4] overflow-hidden bg-background">
             <img
               src={m.img}
               alt={m.t}

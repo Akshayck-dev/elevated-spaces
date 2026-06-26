@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CONTACT } from "@/lib/site-data";
+import logoImg from "@/assets/logo-caeris.png";
 
 function FooterCol({
   title,
@@ -11,7 +12,7 @@ function FooterCol({
   return (
     <div className="md:col-span-2">
       <p className="text-eyebrow mb-6">{title}</p>
-      <ul className="space-y-3 text-white/70">
+      <ul className="space-y-3 text-foreground/70">
         {items.map((i) => (
           <li key={i.label}>
             {i.to ? (
@@ -34,15 +35,12 @@ function FooterCol({
 
 export function Footer() {
   return (
-    <footer className="bg-black px-8 md:px-12 pt-20 pb-10 border-t border-white/10">
+    <footer className="bg-background px-8 md:px-12 pt-20 pb-10 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-            <h3 className="font-display tracking-tight leading-none flex flex-col items-start mb-6">
-              <span className="text-6xl md:text-8xl uppercase tracking-[0.15em] text-white">Caeris</span>
-              <span className="text-2xl md:text-3xl tracking-[0.3em] text-[#C8A45D] uppercase mt-2">Homes</span>
-            </h3>
-            <p className="text-white/50 mt-8 max-w-sm leading-relaxed">
+            <img src={logoImg} alt="Caeris Homes" className="h-36 w-auto object-contain mb-6" />
+            <p className="text-foreground/50 mt-8 max-w-sm leading-relaxed">
               Luxury home builders and architects — designing and delivering dream residences on a turnkey basis.
             </p>
             <Link
@@ -80,7 +78,7 @@ export function Footer() {
           />
         </div>
         <div className="hairline mb-8" />
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-meta text-white/40">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-meta text-foreground/40">
           <p>© 2026 Caeris Homes. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-[#C8A45D]">

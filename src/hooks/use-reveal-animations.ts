@@ -4,6 +4,9 @@ import { gsap } from "@/lib/gsap";
 export function useRevealAnimations() {
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
         gsap.from(el, {
           y: 60,
@@ -36,6 +39,43 @@ export function useRevealAnimations() {
             ease: "expo.out",
             scrollTrigger: { trigger: el, start: "top 80%" },
           },
+        );
+      });
+
+      // Text Scrub Effect
+      gsap.utils.toArray<HTMLElement>("[data-scrub]").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { backgroundPositionX: "100%" },
+          {
+            backgroundPositionX: "0%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: el,
+              scrub: 1,
+              start: "top 85%",
+              end: "bottom 50%",
+            },
+          }
+        );
+      });
+
+      // Simple Parallax Effect
+      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
+        const speed = el.dataset.parallax ? parseFloat(el.dataset.parallax) : 0.15;
+        gsap.fromTo(
+          el,
+          { yPercent: -speed * 100 },
+          {
+            yPercent: speed * 100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el.parentElement,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
         );
       });
     });

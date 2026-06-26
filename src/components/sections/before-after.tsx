@@ -19,7 +19,7 @@ export function BeforeAfter() {
         <h2 data-split className="font-display text-5xl md:text-7xl mb-6">
           {splitChars("Before. After.")}
         </h2>
-        <p className="text-white/60 max-w-xl leading-relaxed">
+        <p className="text-foreground/60 max-w-xl leading-relaxed">
           Drag across to witness a tired apartment reimagined into a curated residence.
         </p>
       </div>
@@ -35,11 +35,11 @@ export function BeforeAfter() {
           <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="absolute top-0 bottom-0 w-px bg-[#C8A45D]" style={{ left: `${pos}%` }}>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border border-[#C8A45D] bg-black/60 backdrop-blur grid place-items-center text-[#C8A45D]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border border-[#C8A45D] bg-background/60 backdrop-blur grid place-items-center text-[#C8A45D]">
             ◂ ▸
           </div>
         </div>
-        <span className="absolute top-6 left-6 text-meta bg-black/50 px-3 py-1">Before</span>
+        <span className="absolute top-6 left-6 text-meta bg-background/50 px-3 py-1">Before</span>
         <span className="absolute top-6 right-6 text-meta bg-[#C8A45D] text-black px-3 py-1">After</span>
       </div>
     </section>

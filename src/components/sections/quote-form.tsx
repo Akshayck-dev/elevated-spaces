@@ -23,10 +23,10 @@ export function QuoteForm() {
           <h1 data-split className="font-display text-5xl md:text-7xl leading-tight mb-6">
             {splitChars("Come on, we will help you build your dream home.")}
           </h1>
-          <p className="text-white/60 leading-relaxed mb-10">
+          <p className="text-foreground/60 leading-relaxed mb-10">
             Share your project details and our team will reach out within one business day.
           </p>
-          <div className="space-y-4 text-white/80">
+          <div className="space-y-4 text-foreground/80">
             <p>
               <span className="text-meta text-[#C8A45D] block mb-1">Phone</span>
               <a href={CONTACT.phoneHref} className="font-display text-2xl hover:text-[#C8A45D]">
@@ -42,30 +42,30 @@ export function QuoteForm() {
           </div>
         </div>
 
-        <div data-reveal className="border border-white/10 bg-[#0c0c0c] p-8 md:p-10">
+        <div data-reveal className="border border-border/10 bg-background p-8 md:p-10">
           {submitted ? (
             <div className="py-16 text-center">
               <p className="font-display text-4xl text-[#C8A45D] mb-4">Thank you.</p>
-              <p className="text-white/60">Our team will contact you shortly to discuss your project.</p>
+              <p className="text-foreground/60">Our team will contact you shortly to discuss your project.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" name="name" required placeholder="Your name" className="h-11 bg-black/40" />
+                <Input id="name" name="name" required placeholder="Your name" className="h-11 bg-background/40" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" required placeholder="+1 (000) 000 0000" className="h-11 bg-black/40" />
+                <Input id="phone" name="phone" type="tel" required placeholder="+1 (000) 000 0000" className="h-11 bg-background/40" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" required placeholder="you@email.com" className="h-11 bg-black/40" />
+                <Input id="email" name="email" type="email" required placeholder="you@email.com" className="h-11 bg-background/40" />
               </div>
               <div className="space-y-2">
                 <Label>Service Type</Label>
                 <Select name="service" required>
-                  <SelectTrigger className="h-11 bg-black/40">
+                  <SelectTrigger className="h-11 bg-background/40">
                     <SelectValue placeholder="What type of service are you looking for?" />
                   </SelectTrigger>
                   <SelectContent>
@@ -80,7 +80,7 @@ export function QuoteForm() {
               <div className="space-y-2">
                 <Label>Approximate Built-up Area</Label>
                 <Select name="area" required>
-                  <SelectTrigger className="h-11 bg-black/40">
+                  <SelectTrigger className="h-11 bg-background/40">
                     <SelectValue placeholder="Select approximate area" />
                   </SelectTrigger>
                   <SelectContent>
@@ -99,7 +99,7 @@ export function QuoteForm() {
                   name="message"
                   rows={4}
                   placeholder="Tell us about your vision, location, and timeline..."
-                  className="bg-black/40 resize-none"
+                  className="bg-background/40 resize-none"
                 />
               </div>
               <Button type="submit" className="w-full h-12 bg-[#C8A45D] text-black hover:bg-white text-meta">

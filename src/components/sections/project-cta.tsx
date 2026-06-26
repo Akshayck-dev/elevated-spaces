@@ -15,7 +15,7 @@ export function ProjectCTA() {
         <Magnetic>
           <Link
             to="/contact"
-            className="inline-block bg-black text-white px-10 py-5 text-meta hover:bg-[#0c0c0c] transition-colors w-fit"
+            className="inline-block bg-background text-foreground px-10 py-5 text-meta hover:bg-background transition-colors w-fit"
           >
             Talk to us today →
           </Link>

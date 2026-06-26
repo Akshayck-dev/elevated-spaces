@@ -9,7 +9,7 @@ export function FloatingContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="group flex items-center justify-center bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-lg hover:scale-105 transition-all text-sm font-medium overflow-hidden"
+        className="group flex items-center justify-center bg-[#25D366] text-foreground p-3 md:p-4 rounded-full shadow-lg hover:scale-105 transition-all text-sm font-medium overflow-hidden"
       >
         <MessageCircle className="w-6 h-6 shrink-0" />
         <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-300 ease-in-out whitespace-nowrap">

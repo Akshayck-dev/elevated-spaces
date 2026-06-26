@@ -9,7 +9,7 @@ export function WhatWeDo() {
   ];
 
   return (
-    <section className="px-8 md:px-12 py-32 border-y border-white/10">
+    <section className="px-8 md:px-12 py-32 border-y border-border/10">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         <div data-reveal>
           <p className="text-eyebrow mb-4">What we do</p>
@@ -19,7 +19,7 @@ export function WhatWeDo() {
         </div>
         <div className="space-y-6">
           {points.map((point, i) => (
-            <p key={i} data-reveal className="text-white/70 leading-relaxed border-l border-[#C8A45D]/40 pl-6">
+            <p key={i} data-reveal className="text-foreground/70 leading-relaxed border-l border-[#C8A45D]/40 pl-6">
               {point}
             </p>
           ))}

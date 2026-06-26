@@ -63,14 +63,14 @@ export function Showcase() {
             <div data-reveal>
               <p className="text-eyebrow mb-4">{p.n} · Featured</p>
               <h3 className="font-display text-5xl md:text-7xl mb-8">{p.t}</h3>
-              <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
+              <div className="grid grid-cols-2 gap-6 border-t border-border/10 pt-8">
                 <Detail label="Location" value={p.loc} />
                 <Detail label="Area" value={p.area} />
                 <Detail label="Style" value={p.style} />
                 <Detail label="Completed" value={p.date} />
               </div>
               <Magnetic>
-                <a href="#" className="inline-block mt-10 text-meta border-b border-[#C8A45D] text-[#C8A45D] pb-2 hover:text-white hover:border-white">
+                <a href="#" className="inline-block mt-10 text-meta border-b border-[#C8A45D] text-[#C8A45D] pb-2 hover:text-foreground hover:border-border">
                   Read the case study →
                 </a>
               </Magnetic>

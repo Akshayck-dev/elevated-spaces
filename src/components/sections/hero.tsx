@@ -4,7 +4,7 @@ import { Magnetic } from "@/components/site/magnetic";
 
 export function Hero() {
   return (
-    <section className="hero relative h-screen w-full overflow-hidden">
+    <section className="hero relative h-screen w-full overflow-hidden dark text-foreground">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={hero}
@@ -20,7 +20,7 @@ export function Hero() {
           <span className="w-10 h-px bg-[#C8A45D]" />
           <span>Luxury Home Builders · Architects · Turnkey</span>
         </div>
-        <h1 className="font-display text-[12vw] md:text-[8vw] leading-[0.9] tracking-[-0.03em] text-white overflow-hidden max-w-5xl">
+        <h1 className="font-display text-[12vw] md:text-[8vw] leading-[0.9] tracking-[-0.03em] text-foreground overflow-hidden max-w-5xl">
           <span className="block overflow-hidden">
             {"We Build Your".split("").map((c, i) => (
               <span key={i} className="hero-char inline-block">
@@ -37,7 +37,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="hero-sub text-white/70 max-w-xl leading-relaxed mt-8 text-lg">
+        <p className="hero-sub text-foreground/70 max-w-xl leading-relaxed mt-8 text-lg">
           Experienced architectural consultants crafting beautiful, luxurious residences — from concept and construction
           to interiors and turnkey handover.
         </p>
@@ -49,14 +49,14 @@ export function Hero() {
             </Link>
           </Magnetic>
           <Magnetic>
-            <Link to="/projects" className="border border-white/40 px-8 py-4 text-meta text-white hover:border-white">
+            <Link to="/projects" className="border border-border/40 px-8 py-4 text-meta text-foreground hover:border-border">
               View Projects →
             </Link>
           </Magnetic>
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-meta text-white/60 flex flex-col items-center gap-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-meta text-foreground/60 flex flex-col items-center gap-2">
         <span>Scroll</span>
         <span className="w-px h-12 bg-white/40 animate-pulse" />
       </div>

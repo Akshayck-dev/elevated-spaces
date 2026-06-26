@@ -88,7 +88,7 @@ export function VideoTestimonials() {
               key={it.name}
               onClick={() => open(i)}
               data-reveal
-              className="group relative aspect-[4/5] overflow-hidden bg-[#0c0c0c] text-left"
+              className="group relative aspect-[4/5] overflow-hidden bg-background text-left"
               aria-label={`Play video testimonial from ${it.name}`}
             >
               <img
@@ -99,14 +99,14 @@ export function VideoTestimonials() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
               <div className="absolute inset-0 grid place-items-center">
-                <span className="w-20 h-20 rounded-full border border-[#C8A45D] bg-black/40 backdrop-blur grid place-items-center text-[#C8A45D] text-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C8A45D] group-hover:text-black">
+                <span className="w-20 h-20 rounded-full border border-[#C8A45D] bg-background/40 backdrop-blur grid place-items-center text-[#C8A45D] text-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C8A45D] group-hover:text-black">
                   ▶
                 </span>
               </div>
               <div className="absolute inset-0 p-6 flex flex-col justify-between">
                 <div className="flex justify-between items-start">
                   <span className="text-eyebrow text-[#C8A45D]">0{i + 1} · Film</span>
-                  <span className="text-meta bg-black/60 px-2 py-1">{it.duration}</span>
+                  <span className="text-meta bg-background/60 px-2 py-1">{it.duration}</span>
                 </div>
                 <div>
                   <h3 className="font-display text-3xl">{it.name}</h3>
@@ -124,11 +124,11 @@ export function VideoTestimonials() {
           role="dialog"
           aria-modal="true"
           aria-label={`Video testimonial — ${items[active].name}`}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-black/85 backdrop-blur-md animate-[fade-in_0.3s_ease-out]"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-background/85 backdrop-blur-md animate-[fade-in_0.3s_ease-out]"
           onClick={close}
         >
           <div
-            className="relative w-full max-w-5xl aspect-video bg-black border border-[#C8A45D]/30 animate-[scale-in_0.4s_ease-out]"
+            className="relative w-full max-w-5xl aspect-video bg-background border border-[#C8A45D]/30 animate-[scale-in_0.4s_ease-out]"
             onClick={(e) => e.stopPropagation()}
           >
             <video
@@ -139,17 +139,17 @@ export function VideoTestimonials() {
               autoPlay
               playsInline
               onLoadedMetadata={handleOpen}
-              className="w-full h-full object-cover bg-black"
+              className="w-full h-full object-cover bg-background"
             />
             <button
               onClick={close}
               aria-label="Close video"
-              className="absolute -top-12 right-0 md:-right-2 text-white/80 hover:text-[#C8A45D] text-meta flex items-center gap-3"
+              className="absolute -top-12 right-0 md:-right-2 text-foreground/80 hover:text-[#C8A45D] text-meta flex items-center gap-3"
             >
-              <span className="w-10 h-10 border border-white/30 grid place-items-center hover:border-[#C8A45D]">✕</span>
+              <span className="w-10 h-10 border border-border/30 grid place-items-center hover:border-[#C8A45D]">✕</span>
               Close
             </button>
-            <div className="absolute -bottom-14 left-0 right-0 flex justify-between text-meta text-white/70">
+            <div className="absolute -bottom-14 left-0 right-0 flex justify-between text-meta text-foreground/70">
               <span>
                 {items[active].name} · {items[active].role}
               </span>
