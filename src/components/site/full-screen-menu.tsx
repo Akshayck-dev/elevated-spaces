@@ -85,35 +85,44 @@ export function FullScreenMenu({ isOpen, onClose }: { isOpen: boolean; onClose: 
   return (
     <div 
       ref={menuRef}
-      className="fixed inset-0 z-[100] bg-background text-foreground flex flex-col md:flex-row invisible overflow-hidden"
+      className="fixed inset-0 z-[100] h-[100dvh] bg-background text-foreground flex flex-col md:flex-row invisible overflow-hidden"
     >
       {/* Close Button */}
       <button 
         onClick={onClose}
-        className="absolute top-8 right-8 z-[110] p-4 text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
+        className="absolute top-4 right-4 sm:top-8 sm:right-8 z-[110] min-w-[44px] min-h-[44px] flex items-center justify-center p-4 text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
       >
         <X size={32} strokeWidth={1.5} />
       </button>
 
       {/* Left Column: Links */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-12 md:px-24 pt-20 md:pt-0">
-        <p className="text-eyebrow mb-12 opacity-60">Menu</p>
-        <ul ref={linksRef} className="space-y-6">
+      <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 md:px-24 pt-20 md:pt-0 overflow-y-auto pb-10">
+        <p className="text-eyebrow mb-8 md:mb-12 opacity-60">Menu</p>
+        <ul ref={linksRef} className="space-y-4 md:space-y-6">
           {links.map((link, i) => (
             <li key={link.to} onMouseEnter={() => handleLinkHover(i)}>
               <Link
                 to={link.to}
                 onClick={onClose}
-                className="font-display text-5xl md:text-7xl hover:italic hover:text-[#C8A45D] transition-colors"
+                className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl hover:italic hover:text-[#C8A45D] transition-colors block"
                 activeProps={{ className: "italic text-[#C8A45D]" }}
               >
                 {link.label}
               </Link>
             </li>
           ))}
+          <li className="pt-4 md:hidden" onMouseEnter={() => handleLinkHover(links.length)}>
+            <Link
+              to="/quote"
+              onClick={onClose}
+              className="font-display text-3xl sm:text-4xl text-red-600 hover:italic transition-colors block py-2"
+            >
+              Get a Free Quote
+            </Link>
+          </li>
         </ul>
         
-        <div className="mt-20 flex gap-8">
+        <div className="mt-12 md:mt-20 flex gap-8">
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">Instagram</a>
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">LinkedIn</a>
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">Pinterest</a>
@@ -121,7 +130,7 @@ export function FullScreenMenu({ isOpen, onClose }: { isOpen: boolean; onClose: 
       </div>
 
       {/* Right Column: Image */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden bg-surface">
+      <div className="hidden md:block md:w-1/2 h-full relative overflow-hidden bg-surface">
         <img 
           ref={imgRef}
           src={currentImage} 

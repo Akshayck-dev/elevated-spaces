@@ -1,24 +1,38 @@
 import { Link } from "@tanstack/react-router";
-import heroVideo from "@/assets/Villa_design_and_construction_an…_202606261727.mp4";
+import { useState, useEffect } from "react";
+import project1 from "@/assets/project-1.jpg";
+import project2 from "@/assets/project-2.jpg";
+import project3 from "@/assets/project-3.jpg";
 import { Magnetic } from "@/components/site/magnetic";
 
 export function Hero() {
+  const images = [project1, project2, project3];
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   return (
-    <section className="hero relative h-screen w-full overflow-hidden dark text-foreground">
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="hero-img absolute inset-0 w-full h-[120%] object-cover"
-          style={{ transform: "scale(1.15)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />
+    <section className="hero relative h-[100dvh] w-full overflow-hidden dark text-foreground">
+      <div className="absolute inset-0 overflow-hidden bg-black">
+        {images.map((img, index) => (
+          <img
+            key={img}
+            src={img}
+            alt="Hero architectural background"
+            className={`absolute inset-0 w-full h-[120%] object-cover transition-opacity duration-[2000ms] ease-in-out ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transform: "scale(1.15)" }}
+          />
+        ))}
       </div>
 
-      <div className="relative h-full flex flex-col justify-center px-8 md:px-12 pt-24">
+      <div className="relative h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 pt-12">
         <div className="text-eyebrow mb-8 hero-sub flex items-center gap-4">
           <span className="w-10 h-px bg-[#C8A45D]" />
           <span>Luxury Home Builders · Architects · Turnkey</span>
@@ -47,7 +61,7 @@ export function Hero() {
 
         <div className="hero-sub mt-10 flex flex-wrap gap-4">
           <Magnetic>
-            <Link to="/contact" className="bg-[#C8A45D] text-black px-8 py-4 text-meta hover:bg-white">
+            <Link to="/quote" className="bg-[#C8A45D] text-black px-8 py-4 text-meta hover:bg-white">
               Get a Free Quote
             </Link>
           </Magnetic>
@@ -59,8 +73,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-meta text-foreground/60 flex flex-col items-center gap-2">
-        <span>Scroll</span>
+      <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 text-meta text-foreground/60 flex-col items-center gap-2">
         <span className="w-px h-12 bg-white/40 animate-pulse" />
       </div>
     </section>

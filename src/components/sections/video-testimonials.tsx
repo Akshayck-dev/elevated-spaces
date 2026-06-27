@@ -69,12 +69,12 @@ export function VideoTestimonials() {
   };
 
   return (
-    <section className="px-8 md:px-12 py-32 bg-background">
+    <section className="px-4 sm:px-8 md:px-12 xl:px-20 py-16 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16" data-reveal>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 md:mb-16" data-reveal>
           <div>
             <p className="text-eyebrow mb-3">Video Stories · 06b</p>
-            <h2 data-split className="font-display text-5xl md:text-7xl">
+            <h2 data-split className="font-display text-4xl md:text-5xl lg:text-7xl">
               {splitChars("Hear them speak.")}
             </h2>
           </div>
@@ -144,9 +144,9 @@ export function VideoTestimonials() {
             <button
               onClick={close}
               aria-label="Close video"
-              className="absolute -top-12 right-0 md:-right-2 text-foreground/80 hover:text-[#C8A45D] text-meta flex items-center gap-3"
+              className="absolute -top-14 right-0 md:-right-2 text-foreground/80 hover:text-[#C8A45D] text-meta flex items-center gap-3"
             >
-              <span className="w-10 h-10 border border-border/30 grid place-items-center hover:border-[#C8A45D]">✕</span>
+              <span className="w-11 h-11 border border-border/30 grid place-items-center hover:border-[#C8A45D] transition-colors rounded-sm">✕</span>
               Close
             </button>
             <div className="absolute -bottom-14 left-0 right-0 flex justify-between text-meta text-foreground/70">

@@ -9,11 +9,11 @@ export function WhatWeDo() {
   ];
 
   return (
-    <section className="px-8 md:px-12 py-32 border-y border-border/10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+    <section className="px-4 sm:px-8 md:px-12 xl:px-20 py-16 border-y border-border/10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-start">
         <div data-reveal>
           <p className="text-eyebrow mb-4">What we do</p>
-          <h2 data-split className="font-display text-5xl md:text-7xl leading-tight">
+          <h2 data-split className="font-display text-4xl md:text-5xl lg:text-7xl leading-tight">
             {splitChars("We Build Your Dream Home")}
           </h2>
         </div>

@@ -14,7 +14,7 @@ export function Materials() {
     { img: finishes, t: "Custom Finishes", n: "05" },
   ];
   return (
-    <section className="bg-background pt-24 py-32 px-8 md:px-12">
+    <section className="bg-background pt-12 py-16 px-8 md:px-12">
       <div className="flex justify-between items-end mb-16 max-w-7xl mx-auto" data-reveal>
         <div>
           <p className="text-eyebrow mb-3">Material Library · 05</p>

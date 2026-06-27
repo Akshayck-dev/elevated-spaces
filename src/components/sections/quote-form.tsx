@@ -16,7 +16,7 @@ export function QuoteForm() {
   };
 
   return (
-    <section className="px-8 md:px-12 py-32 pt-40">
+    <section className="px-8 md:px-12 py-16 pt-20">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
         <div data-reveal>
           <p className="text-eyebrow mb-4">Get a Free Quote</p>

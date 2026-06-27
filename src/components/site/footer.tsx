@@ -16,15 +16,15 @@ function FooterCol({
         {items.map((i) => (
           <li key={i.label}>
             {i.to ? (
-              <Link to={i.to} className="hover:text-[#C8A45D] transition-colors">
+              <Link to={i.to} className="inline-block py-1 hover:text-[#C8A45D] transition-colors">
                 {i.label}
               </Link>
             ) : i.href ? (
-              <a href={i.href} className="hover:text-[#C8A45D] transition-colors">
+              <a href={i.href} className="inline-block py-1 hover:text-[#C8A45D] transition-colors">
                 {i.label}
               </a>
             ) : (
-              <span>{i.label}</span>
+              <span className="inline-block py-1">{i.label}</span>
             )}
           </li>
         ))}
@@ -35,12 +35,12 @@ function FooterCol({
 
 export function Footer() {
   return (
-    <footer className="bg-background px-8 md:px-12 pt-20 pb-10 border-t border-border/10">
+    <footer className="bg-background px-4 sm:px-8 md:px-12 pt-16 md:pt-20 pb-10 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-12 mb-20">
+        <div className="grid md:grid-cols-12 gap-12 mb-16 md:mb-20">
           <div className="md:col-span-5">
-            <img src={logoImg} alt="Caeris Homes" className="h-36 w-auto object-contain mb-6" />
-            <p className="text-foreground/50 mt-8 max-w-sm leading-relaxed">
+            <img src={logoImg} alt="Caeris Homes" className="h-24 md:h-36 w-auto object-contain mb-6" />
+            <p className="text-foreground/50 mt-4 md:mt-8 max-w-sm leading-relaxed">
               Luxury home builders and architects — designing and delivering dream residences on a turnkey basis.
             </p>
             <Link

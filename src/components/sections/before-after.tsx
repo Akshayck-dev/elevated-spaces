@@ -13,7 +13,7 @@ export function BeforeAfter() {
     setPos(Math.max(2, Math.min(98, p)));
   };
   return (
-    <section className="px-8 md:px-12 py-32">
+    <section className="px-8 md:px-12 py-16">
       <div className="max-w-4xl mb-12" data-reveal>
         <p className="text-eyebrow mb-3">Transformations · 04</p>
         <h2 data-split className="font-display text-5xl md:text-7xl mb-6">

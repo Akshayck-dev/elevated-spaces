@@ -30,7 +30,7 @@ function AboutPage() {
       />
 
       {/* Intro Text Section */}
-      <section className="py-24 px-6 md:px-10 lg:px-20 max-w-5xl mx-auto text-center">
+      <section className="py-16 px-4 sm:px-6 md:px-10 xl:px-20 max-w-5xl mx-auto text-center">
         <p className="text-foreground/80 text-xl md:text-2xl leading-relaxed font-medium" data-reveal>
           As leading Luxury Builders and Architects in Kerala, we specialize in crafting
           beautiful, sustainable, and luxurious homes. With over a decade of experience in
@@ -42,7 +42,7 @@ function AboutPage() {
       </section>
 
       {/* Philosophy, Mission, Vision */}
-      <section className="py-24 bg-surface px-6 md:px-10 lg:px-20">
+      <section className="py-16 bg-surface px-4 sm:px-6 md:px-10 xl:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Philosophy */}
           <div data-reveal className="bg-background border border-border/10 p-10 rounded-xl text-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center group">
@@ -83,32 +83,32 @@ function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-[#0a0a0a] text-white py-32 px-6 md:px-10 lg:px-20 relative overflow-hidden">
+      <section className="bg-[#0a0a0a] text-white py-20 px-4 sm:px-6 md:px-10 xl:px-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none" data-parallax="0.1">
           <img src={heroImg} alt="Background" className="w-full h-[120%] object-cover grayscale" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center mb-32 border-b border-white/10 pb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center mb-24 md:mb-32 border-b border-white/10 pb-12">
             <div data-reveal>
-              <p className="text-5xl md:text-7xl font-display mb-4 text-[#C8A45D]">1000+</p>
+              <p className="text-5xl md:text-6xl lg:text-7xl font-display mb-4 text-[#C8A45D]">1000+</p>
               <p className="text-white/60 text-sm uppercase tracking-widest">Completed projects</p>
             </div>
             <div data-reveal className="delay-100">
-              <p className="text-5xl md:text-7xl font-display mb-4 text-[#C8A45D]">12+</p>
+              <p className="text-5xl md:text-6xl lg:text-7xl font-display mb-4 text-[#C8A45D]">12+</p>
               <p className="text-white/60 text-sm uppercase tracking-widest">Years of experience</p>
             </div>
             <div data-reveal className="delay-200">
-              <p className="text-5xl md:text-7xl font-display mb-4 text-[#C8A45D]">100+</p>
+              <p className="text-5xl md:text-6xl lg:text-7xl font-display mb-4 text-[#C8A45D]">100+</p>
               <p className="text-white/60 text-sm uppercase tracking-widest">Team members</p>
             </div>
             <div data-reveal className="delay-300">
-              <p className="text-5xl md:text-7xl font-display mb-4 text-[#C8A45D]">500+</p>
+              <p className="text-5xl md:text-6xl lg:text-7xl font-display mb-4 text-[#C8A45D]">500+</p>
               <p className="text-white/60 text-sm uppercase tracking-widest">Active clients</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1]" data-split>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display leading-tight" data-split>
               {splitChars("From inception to end of project' solution")}
             </h2>
             <div data-reveal className="space-y-8 text-white/70 leading-relaxed text-xl">
@@ -124,10 +124,10 @@ function AboutPage() {
       </section>
 
       {/* Team / Leadership Section */}
-      <section className="py-32 px-6 md:px-10 lg:px-20 bg-surface">
+      <section className="py-20 px-4 sm:px-6 md:px-10 xl:px-20 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-center" data-reveal>
-            <h2 className="text-5xl md:text-6xl font-display">Meet Our Leaders</h2>
+          <div className="mb-16 md:mb-20 text-center" data-reveal>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display">Meet Our Leaders</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -153,18 +153,18 @@ function AboutPage() {
       </section>
 
       {/* Let's Collaborate CTA */}
-      <section className="bg-red-600 text-white py-32 px-6 md:px-10 text-center relative overflow-hidden">
+      <section className="bg-red-600 text-white py-20 px-4 sm:px-6 md:px-10 text-center relative overflow-hidden">
         {/* Parallax texture background */}
         <div className="absolute inset-0 opacity-20 mix-blend-overlay w-full h-[120%] -top-[10%]" data-parallax="0.15">
            <img src={project1} alt="Texture" className="w-full h-full object-cover grayscale" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-display mb-12 leading-tight" data-split>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-display mb-8 md:mb-12 leading-tight" data-split>
             {splitChars("Let's collaborate on a project")}
           </h2>
           <div data-reveal>
-            <Button className="bg-black hover:bg-white hover:text-black text-white px-12 py-8 text-xl rounded-none shadow-2xl transition-all duration-500 hover:scale-105 uppercase tracking-widest">
+            <Button className="bg-black hover:bg-white hover:text-black text-white px-8 py-6 sm:px-12 sm:py-8 text-base sm:text-xl rounded-none shadow-2xl transition-all duration-500 hover:scale-105 uppercase tracking-widest min-w-[44px] min-h-[44px] whitespace-normal h-auto">
               Give us a call now
             </Button>
           </div>
