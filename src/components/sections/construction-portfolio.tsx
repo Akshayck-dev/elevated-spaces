@@ -10,17 +10,17 @@ export function ConstructionPortfolio() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-16" data-reveal>
+    <section className="py-12 md:py-16 bg-background">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-12 xl:px-20 mb-12 md:mb-16" data-reveal>
         <p className="text-eyebrow mb-3 text-[#C8A45D]">Our Portfolio</p>
-        <h2 className="font-display text-4xl md:text-6xl text-foreground">
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground">
           Under Construction
         </h2>
       </div>
 
-      <div className="flex gap-8 overflow-x-auto px-8 md:px-12 pb-12 snap-x snap-mandatory hide-scrollbar">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 sm:px-8 md:px-12 xl:px-20 pb-12 max-w-[1400px] mx-auto">
         {projects.map((p, i) => (
-          <article key={i} className="min-w-[85vw] md:min-w-[45vw] snap-center group cursor-pointer relative aspect-[16/10] overflow-hidden bg-surface" data-reveal>
+          <article key={i} className="group cursor-pointer relative aspect-[16/10] sm:aspect-square md:aspect-[16/10] overflow-hidden bg-surface" data-reveal>
             <div className="absolute inset-0 w-full h-[120%] -top-[10%]" data-parallax="0.1">
               <img 
                 src={p.img} 

@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Magnetic } from "./magnetic";
-import { QuoteModal } from "./quote-modal";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { FullScreenMenu } from "./full-screen-menu";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logoImg from "@/assets/logo-caeris.png";
 
 const links = [
-  { to: "/" as const, label: "Architecture" },
-  { to: "/construction" as const, label: "Construction" },
-  { to: "/projects" as const, label: "Interior" }, // Mapping to projects for now
-  { to: "/process" as const, label: "Turnkey projects" }, // Mapping to process for now
+  { to: "/" as const, label: "Home" },
+  { to: "/about" as const, label: "About Us" },
+  { to: "/construction" as const, label: "Services" },
+  { to: "/projects" as const, label: "Projects" },
+  { to: "/projects" as const, label: "Gallery" }, // Mapping to projects for now
+  { to: "/quote" as const, label: "Contact" },
 ];
 
 export function Nav() {
@@ -24,6 +24,17 @@ export function Nav() {
   
   const isHome = pathname === "/";
   const forceDark = isHome && !isScrolled;
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,27 +61,34 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const isTransparent = isHome && !isScrolled;
+
   return (
     <>
       <header 
         className={cn(
-        "fixed top-0 left-0 right-0 z-[90] px-6 md:px-10 py-5 flex items-center justify-between transition-all duration-500",
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/5 py-4" : "bg-transparent",
-        forceDark ? "dark" : "",
+        "fixed top-0 left-0 right-0 z-[90] px-4 sm:px-6 md:px-10 flex items-center justify-between transition-all duration-500",
+        isTransparent ? "bg-transparent py-6" : "bg-white border-b border-black/5 py-4 shadow-sm",
         isHidden ? "-translate-y-full" : "translate-y-0"
       )}
     >
       <Link to="/" className="relative z-10">
-        <img src={logoImg} alt="Caeris Homes" className="h-16 md:h-20 w-auto object-contain dark:brightness-100 brightness-0 transition-all" />
+        <img src={logoImg} alt="Logo" className="h-16 md:h-20 w-auto object-contain transition-all" />
       </Link>
       
-      <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-foreground/90">
+      <nav className={cn(
+        "hidden md:flex items-center gap-8 text-[15px] font-medium transition-colors duration-500",
+        isTransparent ? "text-white/90" : "text-black/80"
+      )}>
         {links.map((link) => (
           <Link
             key={link.label}
             to={link.to}
-            className="relative hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 drop-shadow-sm"
-            activeProps={{ className: "text-white after:scale-x-100 after:origin-bottom-left" }}
+            className={cn(
+              "relative transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100",
+              isTransparent ? "hover:text-white after:bg-white drop-shadow-sm" : "hover:text-black after:bg-black"
+            )}
+            activeProps={{ className: isTransparent ? "text-white after:scale-x-100 after:origin-bottom-left" : "text-black after:scale-x-100 after:origin-bottom-left font-semibold" }}
           >
             {link.label}
           </Link>
@@ -78,17 +96,12 @@ export function Nav() {
       </nav>
 
       <div className="flex items-center gap-4 z-10">
-        <ThemeToggle />
-        <Magnetic>
-          <QuoteModal>
-            <button className="hidden md:block bg-white text-black font-medium px-6 py-2.5 hover:bg-gray-100 transition-colors cursor-pointer shadow-sm rounded-sm">
-              Get a Free Quote
-            </button>
-          </QuoteModal>
-        </Magnetic>
         <button 
           onClick={() => setIsMenuOpen(true)}
-          className="flex items-center justify-center w-10 h-10 bg-white text-black hover:bg-gray-100 transition-colors shadow-sm rounded-sm"
+          className={cn(
+            "flex items-center justify-center min-w-[44px] min-h-[44px] transition-colors shadow-sm rounded-sm",
+            isTransparent ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-black/90"
+          )}
           aria-label="Open menu"
         >
           <Menu size={20} strokeWidth={1.5} />

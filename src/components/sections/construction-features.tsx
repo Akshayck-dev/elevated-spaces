@@ -18,11 +18,11 @@ export function ConstructionFeatures() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-surface">
-      <div className="max-w-7xl mx-auto px-8 md:px-12">
-        <div className="mb-20 max-w-3xl" data-reveal>
+    <section className="py-12 md:py-16 bg-surface px-4 sm:px-8 md:px-12 xl:px-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 md:mb-20 max-w-3xl" data-reveal>
           <p className="text-eyebrow mb-4 text-[#C8A45D]">Why Caeris Homes</p>
-          <h2 data-scrub className="font-display text-4xl md:text-6xl mb-6 bg-clip-text text-transparent bg-[linear-gradient(to_right,#fff_50%,rgba(255,255,255,0.2)_50%)] bg-[length:200%_100%]">
+          <h2 data-scrub className="font-display text-3xl md:text-5xl lg:text-6xl mb-6 bg-clip-text text-transparent bg-[linear-gradient(to_right,#fff_50%,rgba(255,255,255,0.2)_50%)] bg-[length:200%_100%] leading-tight">
             Experience, Excellence <br />
             <span className="text-[#C8A45D]">And Commitment</span>
           </h2>

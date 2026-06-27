@@ -6,12 +6,12 @@ export function Testimonials() {
   const [idx, setIdx] = useState(0);
 
   return (
-    <section id="testimonials" className="px-8 md:px-12 py-32 bg-background">
+    <section id="testimonials" className="px-4 sm:px-8 md:px-12 xl:px-20 py-16 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16" data-reveal>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 md:mb-16" data-reveal>
           <div>
             <p className="text-eyebrow mb-3">Testimonials</p>
-            <h2 data-split className="font-display text-5xl md:text-7xl">
+            <h2 data-split className="font-display text-4xl md:text-5xl lg:text-7xl">
               {splitChars("Real reviews, real results.")}
             </h2>
           </div>

@@ -19,7 +19,7 @@ function ProjectsPage() {
 
   return (
     <SiteLayout>
-      <div className="pt-24">
+      <div className="pt-12">
         <ProjectsGrid />
       </div>
       <ProjectCTA />

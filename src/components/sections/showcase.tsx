@@ -44,7 +44,7 @@ export function Showcase() {
     },
   ];
   return (
-    <section className="py-32 px-8 md:px-12">
+    <section className="py-16 px-8 md:px-12">
       <div className="max-w-7xl mx-auto mb-24 text-center" data-reveal>
         <p className="text-eyebrow mb-3">Project Stories · 07</p>
         <h2 data-split className="font-display text-6xl md:text-8xl">

@@ -2,7 +2,7 @@ import { splitChars } from "@/lib/split-chars";
 
 export function YourStory() {
   return (
-    <section className="px-8 md:px-12 py-32 bg-background">
+    <section className="px-8 md:px-12 py-16 bg-background">
       <div className="max-w-4xl mx-auto text-center" data-reveal>
         <p className="text-eyebrow mb-4">Your Space, Your Story</p>
         <h2 data-split className="font-display text-5xl md:text-7xl mb-8">
