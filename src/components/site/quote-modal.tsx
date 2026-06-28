@@ -13,25 +13,40 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-export function QuoteModal({ children }: { children: React.ReactNode }) {
+export function QuoteModal({ children }: { children?: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  // Auto-open after 30 seconds
+  // Auto-open after 10 seconds if not seen before
   useEffect(() => {
+    // Check if the user has already seen or closed the popup in this browser
+    const hasSeenPopup = localStorage.getItem("quote_popup_seen");
+    
+    if (hasSeenPopup) return;
+
     const timer = setTimeout(() => {
       // Only open if it hasn't been submitted yet
       if (!submitted) {
         setOpen(true);
       }
-    }, 30000); // 30 seconds
+    }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
   }, [submitted]);
 
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen);
+    if (!isOpen) {
+      // If user closes it, remember it so it doesn't pop up again
+      localStorage.setItem("quote_popup_seen", "true");
+    }
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    localStorage.setItem("quote_popup_seen", "true");
+    
     setTimeout(() => {
       setOpen(false);
       setSubmitted(false);
@@ -41,8 +56,8 @@ export function QuoteModal({ children }: { children: React.ReactNode }) {
   const inputClass = "h-10 border-0 border-b border-border/30 rounded-none px-0 shadow-none focus-visible:ring-0 focus-visible:border-foreground bg-transparent text-foreground placeholder:text-muted-foreground/50 text-sm";
   
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent className="sm:max-w-[420px] bg-background border border-border/10 text-foreground p-6 z-[110] rounded-xl shadow-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader className="mb-4">
           <DialogTitle className="font-display text-2xl md:text-3xl text-foreground font-normal">Get a Free Quote</DialogTitle>
@@ -64,7 +79,7 @@ export function QuoteModal({ children }: { children: React.ReactNode }) {
                 <SelectTrigger className="w-[100px] h-10 border-0 border-b border-border/30 rounded-none px-0 shadow-none focus:ring-0 bg-transparent text-foreground text-sm">
                   <SelectValue placeholder="Country" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="z-[120]">
                   <SelectItem value="+91">India (+91)</SelectItem>
                   <SelectItem value="+1">USA (+1)</SelectItem>
                   <SelectItem value="+44">UK (+44)</SelectItem>
@@ -85,11 +100,11 @@ export function QuoteModal({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="space-y-1">
-              <Select name="service" required defaultValue="Architecture">
+              <Select name="service" required>
                 <SelectTrigger className="h-10 border-0 border-b border-border/30 rounded-none px-0 shadow-none focus:ring-0 bg-transparent text-foreground text-sm">
                   <SelectValue placeholder="What type of service are you looking for?" />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-border/10 text-foreground">
+                <SelectContent className="z-[120] bg-surface border-border/10 text-foreground">
                   {serviceOptions.map((opt) => (
                     <SelectItem key={opt} value={opt}>
                       {opt}
@@ -100,11 +115,11 @@ export function QuoteModal({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="space-y-1">
-              <Select name="area" required defaultValue="2500-5000">
+              <Select name="area" required>
                 <SelectTrigger className="h-10 border-0 border-b border-border/30 rounded-none px-0 shadow-none focus:ring-0 bg-transparent text-foreground text-sm">
                   <SelectValue placeholder="Approximate Built-up Area (Sq. Ft.)" />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-border/10 text-foreground">
+                <SelectContent className="z-[120] bg-surface border-border/10 text-foreground">
                   {areaOptions.map((opt) => (
                     <SelectItem key={opt} value={opt}>
                       {opt}

@@ -39,7 +39,6 @@ function HomePage() {
       <ProjectCTA />
       <WhyUs />
       <YourStory />
-      <WeEnsure />
       <Testimonials />
       <Stats />
     </SiteLayout>
