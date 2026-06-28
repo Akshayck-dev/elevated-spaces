@@ -18,7 +18,7 @@ export function ProjectsGrid({ limit, showViewAll = false }: ProjectsGridProps) 
   const items = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="px-4 sm:px-8 md:px-12 xl:px-20 py-16">
+    <section className="px-4 sm:px-8 md:px-12 xl:px-20 py-24 md:py-32">
       <div className="max-w-7xl mx-auto">
         <Carousel opts={{ align: "start", dragFree: true }} className="w-full">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16" data-reveal>
@@ -40,8 +40,8 @@ export function ProjectsGrid({ limit, showViewAll = false }: ProjectsGridProps) 
               )}
               {/* Navigation Buttons */}
               <div className="hidden md:flex gap-2 relative">
-                <CarouselPrevious className="static translate-y-0 translate-x-0 h-12 w-12 bg-background border-border hover:bg-surface hover:text-[#C8A45D] transition-colors" />
-                <CarouselNext className="static translate-y-0 translate-x-0 h-12 w-12 bg-background border-border hover:bg-surface hover:text-[#C8A45D] transition-colors" />
+                <CarouselPrevious aria-label="Previous projects" className="static translate-y-0 translate-x-0 h-12 w-12 bg-background border-border hover:bg-surface hover:text-[#C8A45D] transition-colors" />
+                <CarouselNext aria-label="Next projects" className="static translate-y-0 translate-x-0 h-12 w-12 bg-background border-border hover:bg-surface hover:text-[#C8A45D] transition-colors" />
               </div>
             </div>
           </div>
@@ -49,12 +49,13 @@ export function ProjectsGrid({ limit, showViewAll = false }: ProjectsGridProps) 
           <CarouselContent className="-ml-4 sm:-ml-6">
             {items.map((project) => (
               <CarouselItem key={project.slug} className="pl-4 sm:pl-6 basis-[85%] sm:basis-1/2 lg:basis-1/3">
-                <article className="group relative aspect-[4/5] rounded-2xl overflow-hidden h-full shadow-lg cursor-grab active:cursor-grabbing">
+                <article className="group relative aspect-[4/5] rounded-2xl overflow-hidden h-full apple-shadow border border-white/10 cursor-grab active:cursor-grabbing">
                   <img
                     src={project.img}
                     alt={project.client}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1000ms] ease-out group-hover:scale-[1.03]"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">

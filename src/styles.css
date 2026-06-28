@@ -96,6 +96,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -119,8 +120,12 @@
 @utility font-display {
   font-family: var(--font-display);
   font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+@utility apple-shadow {
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.06), 0 16px 40px -12px rgba(0, 0, 0, 0.1);
 }
 
 @utility text-eyebrow {

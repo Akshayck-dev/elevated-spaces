@@ -1,32 +1,35 @@
-import { splitChars } from "@/lib/split-chars";
-import { guarantees } from "@/lib/site-data";
+import { Clock, ShieldCheck, Award, Headset, Factory } from "lucide-react";
 
 export function WeEnsure() {
+  const guarantees = [
+    { title: "Timely\nDelivery", icon: Clock },
+    { title: "Using German\nTechnology", icon: ShieldCheck },
+    { title: "15 Years\nWarranty", icon: Award },
+    { title: "Assured\nLifetime Service", icon: Headset },
+    { title: "Delivery Directly\nFrom Our Factories", icon: Factory },
+  ];
+
   return (
-    <section className="px-4 sm:px-8 md:px-12 xl:px-20 py-16 border-y border-border/10">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16" data-reveal>
-          <p className="text-eyebrow mb-3">We Ensure</p>
-          <h2 data-split className="font-display text-4xl md:text-5xl lg:text-6xl">
-            {splitChars("Built with confidence.")}
-          </h2>
-        </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {guarantees.map((item) => (
-            <li
-              key={item}
-              data-reveal
-              className="border border-border/10 bg-background/30 px-6 py-6 md:py-8 text-center hover:border-[#C8A45D]/40 transition-colors"
+    <section className="bg-transparent relative z-20 px-4 sm:px-8 md:px-12 xl:px-20 -mt-24 mb-16">
+      <div className="max-w-[90rem] mx-auto bg-[#FAF9F6] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-[#C8A45D]/10 p-2 md:p-6 relative overflow-hidden">
+        
+        {/* 5-Column Grid with vertical dividers matching the design */}
+        <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[#C8A45D]/20">
+          {guarantees.map((item, i) => (
+            <div 
+              key={i}
+              className="flex items-center justify-center gap-4 p-6 group transition-all"
             >
-              <span className="block w-2 h-2 bg-[#C8A45D] rounded-full mx-auto mb-3 md:mb-4" />
-              <p className="font-display text-lg md:text-xl">{item}</p>
-            </li>
+              <div className="w-14 h-14 rounded-full border border-[#C8A45D]/30 flex flex-shrink-0 items-center justify-center bg-white shadow-sm">
+                <item.icon className="w-6 h-6 text-[#C8A45D]" strokeWidth={1.5} />
+              </div>
+              
+              <p className="font-display text-sm lg:text-[15px] text-foreground font-medium leading-snug text-left whitespace-pre-line">
+                {item.title}
+              </p>
+            </div>
           ))}
-        </ul>
-        <p className="text-center text-foreground/50 mt-12 max-w-2xl mx-auto leading-relaxed" data-reveal>
-          Our dedicated team works seamlessly across design studios and partner ateliers, ensuring top-notch quality and
-          innovation at every step.
-        </p>
+        </div>
       </div>
     </section>
   );

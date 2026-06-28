@@ -84,3 +84,50 @@ export function TurnkeyIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function MinimalInteriorIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      {/* Sofa */}
+      <path d="M22 40h28a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4H22" />
+      <path d="M22 40v6" />
+      <path d="M50 40v6" />
+      <path d="M26 28a6 6 0 0 1 12 0" />
+      <path d="M42 28a6 6 0 0 1 12 0" />
+      {/* Lamp */}
+      <path d="M16 46V18" />
+      <path d="M12 18l4-8 4 8h-8z" />
+    </svg>
+  );
+}
+
+export function MinimalConstructionIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      {/* Wall */}
+      <path d="M12 50h40" />
+      <path d="M12 40h40" />
+      <path d="M12 30h28" />
+      <path d="M22 40v10" />
+      <path d="M42 40v10" />
+      <path d="M32 30v10" />
+      {/* Trowel */}
+      <path d="M36 34l8-8 6 6-8 8z" />
+      <path d="M32 38l4-4" />
+    </svg>
+  );
+}
+
+export function MinimalPlanningIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      {/* Roof line */}
+      <path d="M12 44l10-10 6 6 18-18" />
+      <path d="M36 20c0 4-3 6-3 10s3 6 3 10" />
+      <path d="M36 20v20" />
+      {/* Drafting tool / Ruler */}
+      <path d="M40 32l10 10-6 6-10-10" />
+      <path d="M44 42l2-2" />
+    </svg>
+  );
+}

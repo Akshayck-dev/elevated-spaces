@@ -67,8 +67,8 @@ export function Nav() {
     <>
       <header 
         className={cn(
-        "fixed top-0 left-0 right-0 z-[90] px-4 sm:px-6 md:px-10 flex items-center justify-between transition-all duration-500",
-        isTransparent ? "bg-transparent py-6" : "bg-white border-b border-black/5 py-4 shadow-sm",
+        "fixed top-0 left-0 right-0 z-[90] px-4 sm:px-6 md:px-10 flex items-center justify-between transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
+        isTransparent ? "bg-transparent py-6" : "bg-white/95 backdrop-blur-xl border-b border-black/5 py-4 shadow-sm",
         isHidden ? "-translate-y-full" : "translate-y-0"
       )}
     >
@@ -85,7 +85,7 @@ export function Nav() {
             key={link.label}
             to={link.to}
             className={cn(
-              "relative transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100",
+              "relative transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.16,1,0.3,1)] hover:after:origin-bottom-left hover:after:scale-x-100",
               isTransparent ? "hover:text-white after:bg-white drop-shadow-sm" : "hover:text-black after:bg-black"
             )}
             activeProps={{ className: isTransparent ? "text-white after:scale-x-100 after:origin-bottom-left" : "text-black after:scale-x-100 after:origin-bottom-left font-semibold" }}
@@ -99,7 +99,7 @@ export function Nav() {
         <button 
           onClick={() => setIsMenuOpen(true)}
           className={cn(
-            "flex items-center justify-center min-w-[44px] min-h-[44px] transition-colors shadow-sm rounded-sm",
+            "flex items-center justify-center min-w-[44px] min-h-[44px] transition-all duration-300 active:scale-[0.96] shadow-sm rounded-sm",
             isTransparent ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-black/90"
           )}
           aria-label="Open menu"

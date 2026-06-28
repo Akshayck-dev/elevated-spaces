@@ -52,21 +52,24 @@ export const projects = [
 export const whyPillars = [
   {
     title: "Flexibility",
-    subtitle: "An inclusive model",
+    subtitle: "AN INCLUSIVE MODEL",
     description:
       "A team of creative architects who combine vision with disciplined practice to create beautiful, inspirational spaces tailored to you.",
+    img: project1,
   },
   {
     title: "Simplicity",
-    subtitle: "More clarity, less noise",
+    subtitle: "MORE CLARITY, LESS NOISE",
     description:
       "We focus on making your home a place you love — timelessly elegant interiors with equal attention to quality and comfort.",
+    img: project2,
   },
   {
     title: "Adaptability",
-    subtitle: "Evolves with you over time",
+    subtitle: "EVOLVES WITH YOU OVER TIME",
     description:
       "From design conception to construction completion, we handle every aspect with unmatched project management and transparency.",
+    img: project3,
   },
 ];
 

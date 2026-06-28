@@ -24,7 +24,7 @@ export function Hero() {
             key={img}
             src={img}
             alt="Hero architectural background"
-            className={`absolute inset-0 w-full h-[120%] object-cover transition-opacity duration-[2000ms] ease-in-out ${
+            className={`absolute inset-0 w-full h-[120%] object-cover transition-opacity duration-[3000ms] ease-in-out ${
               index === currentImage ? "opacity-100" : "opacity-0"
             }`}
             style={{ transform: "scale(1.15)" }}
@@ -37,7 +37,7 @@ export function Hero() {
           <span className="w-10 h-px bg-[#C8A45D]" />
           <span>Luxury Home Builders · Architects · Turnkey</span>
         </div>
-        <h1 className="font-display text-[12vw] md:text-[8vw] leading-[0.9] tracking-[-0.03em] text-foreground overflow-hidden max-w-5xl">
+        <h1 className="font-display text-[12vw] md:text-[8vw] text-foreground overflow-hidden max-w-5xl">
           <span className="block overflow-hidden">
             {"We Build Your".split("").map((c, i) => (
               <span key={i} className="hero-char inline-block">
@@ -59,14 +59,14 @@ export function Hero() {
           to interiors and turnkey handover.
         </p>
 
-        <div className="hero-sub mt-10 flex flex-wrap gap-4">
+        <div className="hero-sub mt-12 flex flex-wrap gap-4">
           <Magnetic>
-            <Link to="/quote" className="bg-[#C8A45D] text-black px-8 py-4 text-meta hover:bg-white">
+            <Link to="/quote" className="inline-block bg-[#C8A45D] text-black px-8 py-4 text-meta transition-all duration-500 hover:bg-white active:scale-[0.98] shadow-sm">
               Get a Free Quote
             </Link>
           </Magnetic>
           <Magnetic>
-            <Link to="/projects" className="border border-border/40 px-8 py-4 text-meta text-foreground hover:border-border">
+            <Link to="/projects" className="inline-block border border-border/40 px-8 py-4 text-meta text-foreground transition-all duration-500 hover:border-border hover:bg-white/5 active:scale-[0.98]">
               View Projects →
             </Link>
           </Magnetic>
