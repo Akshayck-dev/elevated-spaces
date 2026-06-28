@@ -96,15 +96,16 @@ export function FullScreenMenu({ isOpen, onClose }: { isOpen: boolean; onClose: 
       </button>
 
       {/* Left Column: Links */}
-      <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-8 md:px-24 pt-20 md:pt-0 overflow-y-auto pb-10">
-        <p className="text-eyebrow mb-8 md:mb-12 opacity-60">Menu</p>
+      <div className="w-full md:w-1/2 h-full overflow-y-auto">
+        <div className="min-h-full flex flex-col justify-center px-8 md:px-24 py-20 md:py-24">
+          <p className="text-eyebrow mb-6 md:mb-10 opacity-60">Menu</p>
         <ul ref={linksRef} className="space-y-4 md:space-y-6">
           {links.map((link, i) => (
             <li key={link.to} onMouseEnter={() => handleLinkHover(i)}>
               <Link
                 to={link.to}
                 onClick={onClose}
-                className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl hover:italic hover:text-[#C8A45D] transition-colors block"
+                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl hover:italic hover:text-[#C8A45D] transition-colors block leading-tight"
                 activeProps={{ className: "italic text-[#C8A45D]" }}
               >
                 {link.label}
@@ -122,10 +123,11 @@ export function FullScreenMenu({ isOpen, onClose }: { isOpen: boolean; onClose: 
           </li>
         </ul>
         
-        <div className="mt-12 md:mt-20 flex gap-8">
+        <div className="mt-10 md:mt-16 flex gap-8">
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">Instagram</a>
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">LinkedIn</a>
           <a href="#" className="text-meta hover:text-[#C8A45D] transition-colors">Pinterest</a>
+        </div>
         </div>
       </div>
 

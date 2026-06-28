@@ -33,7 +33,7 @@ export function ProjectsHero() {
             OUR PROJECTS
           </p>
           
-          <h1 className="font-display text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-foreground mb-8 font-normal">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-foreground mb-8 font-normal">
             From Vision <br />
             to <span className="text-[#C8A45D]">Reality</span>
           </h1>
